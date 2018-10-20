@@ -10,6 +10,8 @@ import java.io.ObjectInputStream;
 * HashDictionary is a class that loads a hash and password dictionary from disk.
 * <p>
 * It can then be used to check if the password that produced a hash is known.
+* 
+* @author       Toby Flynn
 */
 public class HashDictionary {
     
