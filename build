@@ -2,6 +2,8 @@
 
 javac HashFunction.java
 javac MD5Hash.java
+javac SHA1Hash.java
+javac SHA256Hash.java
 javac DictionaryCreator.java
 javac HashDictionary.java
 javac HashCracker.java

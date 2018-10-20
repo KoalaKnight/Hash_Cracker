@@ -67,7 +67,7 @@ public class HashCracker {
         //Get the hashing function
         HashFunction hashFunc = getHashingFunction(hashingFunction);
         if(hashFunc == null) {
-            System.out.println("Unsupported hashing function. Use one of the following options: md5, ");
+            System.out.println("Unsupported hashing function. Use one of the following options: md5, sha1, sha256");
             System.exit(-1);
         }
         //Create dictionary
@@ -85,6 +85,10 @@ public class HashCracker {
         
         if(hashingFunction.equals("md5")) {
             result = new MD5Hash();
+        } else if(hashingFunction.equals("sha1")) {
+            result = new SHA1Hash();
+        } else if(hashingFunction.equals("sha256")) {
+            result = new SHA256Hash();
         } else {
             result = null;
         }
@@ -99,7 +103,7 @@ public class HashCracker {
         System.out.println("Usage:");
         System.out.println("To create a dictionary, using a certain hashing function, by importing a word list (.txt): java HashCracker i [md5/sha1/...] [wordListPath] [outputFile]");
         System.out.println("To crack a list of hashes using a prepared hash-password dictionary (created using this program): java HashCracker c [dictionaryFile] [inputFile] [outputFile]");
-        System.out.println("Supported hashing functions: MD5 [md5], ");
+        System.out.println("Supported hashing functions: MD5 [md5], SHA1 [sha1], SHA256 [sha256]");
     }
     
     //args: [i] [md5/sha1/...] [inputFile] [outputFile]
