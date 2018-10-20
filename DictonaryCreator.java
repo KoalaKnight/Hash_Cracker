@@ -9,9 +9,11 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 /**
-* DictionaryCreater is a class used to create a dictionary of passwords and their hashes, saving it to disk to be reused.
+* DictionaryCreator is a class used to create a dictionary of passwords and their hashes, saving it to disk to be reused.
+* 
+* @author           Toby Flynn
 */
-public class DictionaryCreater {
+public class DictionaryCreator {
     
     private HashFunction hashFunc;
     private Map<String,String> dict;
@@ -25,7 +27,7 @@ public class DictionaryCreater {
     * @param        wordListPath            Path to the word list
     * @param        hashDictPath            Path to where the dictionary will be stored (by convention it should have a .ser extension)
     */
-    public DictionaryCreater(HashFunction hashFunction, String wordListPath, String hashDictPath) {
+    public DictionaryCreator(HashFunction hashFunction, String wordListPath, String hashDictPath) {
         hashFunc = hashFunction;
         dict = new HashMap<>();
         try {
